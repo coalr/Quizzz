@@ -25,9 +25,9 @@ class QuizBuilder(object):
 
         decoded = self.read_from_web(begriff, textsource)
 
-        absatzlist = self.extractParagraphs(decoded)
+        paragraphList = self.extractParagraphs(decoded)
 
-        sentencelist = self.extractSentences(absatzlist)
+        sentencelist = self.extractSentences(paragraphList)
 
         # Bestimmten Ausdruck im Satz suchen
         t = ' is a '
@@ -192,8 +192,8 @@ while len(answerlist) < 3:
 print(questionlist[0] + ':')
 
 # Merken, welche Antwort die richtige ist
-korranswer = answerlist[0]
-logging.debug('korranswer = ',korranswer)
+correctanswer = answerlist[0]
+logging.debug('korranswer = ',correctanswer)
 
 ### Antworten ohne Würfeln ausgeben (zum Test); die erste ist immer die richtige
 logging.debug ('a)', answerlist[0])
@@ -247,7 +247,7 @@ elif tflist[s[ndex]][1] == t:
     print('Das ist richtig! Gratuliere!')
 else:
     print('Das ist leider falsch! Richtig wäre gewesen:')
-    print(questionlist[0]+' '+korranswer)
+    print(questionlist[0]+' '+correctanswer)
 
 
 
