@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 
 
 # Klassendefinition
-class Frageundantwort(object):
+class QuizBuilder(object):
     def __init__(self, textsource, begriff):
         self.textsource = textsource
         self.begriff = begriff
@@ -181,11 +181,11 @@ korpus = 'https://en.wikipedia.org/wiki/' # Wikipedia englisch
 
 # Solange Zufalls-Internetseiten laden, bis Antwortliste 3 Elemente hat
 while len(answerlist) < 1:
-    f1 = Frageundantwort(korpus, 'Special:Random')
+    f1 = QuizBuilder(korpus, 'Special:Random')
 while len(answerlist) < 2:
-    f2 = Frageundantwort(korpus, 'Special:Random')
+    f2 = QuizBuilder(korpus, 'Special:Random')
 while len(answerlist) < 3:
-    f3 = Frageundantwort(korpus, 'Special:Random')
+    f3 = QuizBuilder(korpus, 'Special:Random')
 
 
 # Ausgabe von Frage und Antworten
